@@ -16,30 +16,45 @@
 
       <div id="message"></div>
 
-      <!-- / AUTH START / -->
+      <!-- / AUTH / -->
       <section id="auth">
-        <form class="sign-in">
-
+        <form id="sign-in" class="btn-pad row">
+          <h4>Sign In</h4>
+          <input class="form-control" type="email" name="credentials[email]" placeholder="">
+          <input class="form-control" type="password" name="credentials[password]" placeholder="">
+          <button class="btn">Submit</button>
         </form>
-        <form class="sign-out">
 
+        <form id="sign-out">
+          <button class="btn">Sign Out</button>
         </form>
-        <form class="sign-up">
 
+        <form id="sign-up">
+          <h4>Sign Up</h4>
+          <input class="form-control" type="email" name="credentials[email]" placeholder="Email">
+          <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
+          <input class="form-control" type="password" name="credentials[password_c]" placeholder="Confirm Password">
+          <button class="btn">Submit</button>
         </form>
-        <form class="change-password">
 
+        <form id="change-password">
+          <h4>Change Password</h4>
+          <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
+          <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+          <button class="btn">Submit</button>
         </form>
       </section>
-      <!-- / AUTH END / -->
 
       <!-- /  / -->
 
       <!-- /  / -->
 
-      <!-- / POSTS / -->
+      <!-- / POSTS START / -->
       <section id="posts" class="posts"></section>
+      <!-- / POSTS END / -->
 
-      <footer></footer>
+      <footer>
+        <!-- / FOOTER / -->
+      </footer>
     </body>
 </html>

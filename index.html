@@ -20,8 +20,8 @@
       <section id="auth">
         <form id="sign-in" class="btn-pad row">
           <h4>Sign In</h4>
-          <input class="form-control" type="email" name="credentials[email]" placeholder="">
-          <input class="form-control" type="password" name="credentials[password]" placeholder="">
+          <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+          <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
           <button class="btn">Submit</button>
         </form>
 
@@ -31,30 +31,75 @@
 
         <form id="sign-up">
           <h4>Sign Up</h4>
-          <input class="form-control" type="email" name="credentials[email]" placeholder="Email">
-          <input class="form-control" type="password" name="credentials[password]" placeholder="Password">
-          <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+          <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+          <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="current-password">
           <button class="btn">Submit</button>
         </form>
 
         <form id="change-password">
           <h4>Change Password</h4>
-          <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password">
-          <input class="form-control" type="password" name="passwords[new]" placeholder="New Password">
+          <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" autocomplete="current-password">
+          <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
           <button class="btn">Submit</button>
         </form>
       </section>
 
-      <!-- /  / -->
+      <!-- / POST FORMS / -->
 
-      <!-- /  / -->
+      <form id="create-post" class="btn-pad row">
+        <h4>Create Post</h4>
+        <input class="form-control" type="text" name="post[title]" placeholder="Title">
+        <input class="form-control" type="text" name="post[text]" placeholder="Text">
+        <button class="btn">Submit</button>
+      </form>
 
-      <!-- / POSTS START / -->
-      <section id="posts" class="posts"></section>
-      <!-- / POSTS END / -->
+      <form id="show-post">
+        <h4>Show Post</h4>
+        <input class="form-control" type="text" name="post[id]" placeholder="Search by Post Number">
+        <button class="btn">Search</button>
+      </form>
 
-      <footer>
-        <!-- / FOOTER / -->
-      </footer>
+      <form id="update-post" class="btn-pad row">
+        <h4>Update Post</h4>
+        <input class="form-control" type="text" name="comment[id]" placeholder="Post ID">
+        <input class="form-control" type="text" name="post[title]" placeholder="Title">
+        <input class="form-control" type="text" name="post[text]" placeholder="Text">
+        <button class="btn">Submit</button>
+      </form>
+
+      <!-- / COMMENT FORMS / -->
+
+      <form id="create-comment" class="btn-pad row">
+        <h4>Create Comment</h4>
+        <input class="form-control" type="text" name="comment[post]" placeholder="OnWhichPost(ID)">
+        <input class="form-control" type="text" name="comment[text]" placeholder="Text">
+        <button class="btn">Submit</button>
+      </form>
+
+      <form id="update-comment" class="btn-pad row">
+        <h4>Update Comment</h4>
+        <input class="form-control" type="text" name="comment[id]" placeholder="Comment ID">
+        <input class="form-control" type="text" name="comment[text]" placeholder="Text">
+        <button class="btn">Submit</button>
+      </form>
+
+      <!-- // -->
+
+      <section id="posts"></section>
+      <section id="comments"></section>
+
+      <!-- // -->
+
+      <form id="index-posts" class>
+        <button class="btn">Index Posts</button>
+      </form>
+
+      <form id="index-comments" class>
+        <button class="btn">Index Comments</button>
+      </form>
+
+      <!-- / FOOTER / -->
+      <footer>#</footer>
     </body>
 </html>

@@ -1,11 +1,10 @@
 const store = require('../store')
 
 const successMessage = message => {
+  $('form').trigger('reset')
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
-  // Clear getFormFields
-  $('form').trigger('reset')
 }
 const failureMessage = message => {
   $('#message').text(message)
@@ -26,6 +25,7 @@ const signInSuccess = responseData => {
   $('#sign-in').hide()
   $('#sign-up').hide()
   store.user = responseData.user
+  console.log('store.user', store.user)
 }
 const signInFailure = () => {
   failureMessage('Sign in failed!')

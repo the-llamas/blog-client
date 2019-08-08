@@ -1,4 +1,4 @@
-curl "http://localhost:4741/sign-out" \
+curl "http://localhost:4741/posts/${ID}" \
   --include \
   --request DELETE \
   --header "Authorization: Token token=b4c0bc693badfc527198b141f0c35691"

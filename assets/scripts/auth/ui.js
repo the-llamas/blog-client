@@ -1,3 +1,5 @@
+const store = require('../store')
+
 const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
@@ -23,6 +25,7 @@ const signInSuccess = responseData => {
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  store.user = responseData.user
 }
 const signInFailure = () => {
   failureMessage('Sign in failed!')

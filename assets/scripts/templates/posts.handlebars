@@ -1,0 +1,19 @@
+{{#each posts as |post|}}
+  <div class="item" data-id="{{post.id}}">
+      <img id="img-{{post.id}}">
+      <h3>{{post.title}}</h3>
+      <p>{{post.body}}</p>
+    </div>
+    <div class="" data-id="{{post.id}}">
+      <div class="btn-div" title="{{post.title}}" body="" img="{{post.img}}" author="{{post.author}}">
+        <button class="btn edit-post" data-id="{{post.id}}">
+        </button>
+      </div>
+      <div class="btn-div" title="{{post.title}}" body="" img="{{post.img}}" author="{{post.author}}">
+        <button class="btn delete-post" data-id="{{post.id}}">
+        </button>
+      </div>
+    </div>
+  </div>
+
+{{/each}}

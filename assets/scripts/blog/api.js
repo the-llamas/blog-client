@@ -34,10 +34,20 @@ const getCommentsOfAPost = () => {
     url: config.apiUrl + '/comments-???'
   })
 }
-const createPost = () => {
+const createPost = formData => {
   return $.ajax({
     url: config.apiUrl + '/posts',
     method: 'POST',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+const deletePost = id => {
+  return $.ajax({
+    url: config.apiUrl + '/posts/' + id,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -50,5 +60,6 @@ module.exports = {
   // showPost
   getMyPosts,
   getCommentsOfAPost,
-  createPost
+  createPost,
+  deletePost
 }

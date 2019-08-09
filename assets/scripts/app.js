@@ -23,4 +23,5 @@ $(() => {
   $('#create-post').on('submit', blogEvents.onCreatePost)
   $('#create-comment').on('submit', blogEvents.onCreateComment)
   $('#update-comment').on('submit', blogEvents.onUpdateComment)
+  $('#delete-post').on('submit', blogEvents.onDeletePost)
 })

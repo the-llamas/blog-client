@@ -1,5 +1,6 @@
 const postTemplate = require('../templates/posts.handlebars')
 const commentTemplate = require('../templates/comments.handlebars')
+const store = require('../store')
 
 const createPostSuccess = data => {
   console.log(data)
@@ -23,7 +24,7 @@ const getMyPostsSuccess = data => {
   $('#posts').html(showPostsHtml)
 }
 
-const failure = data => console.log('fail data', console.log(data))
+const failure = data => console.log('fail data', data)
 
 // const onGetCommentsOfAPost = data => {
 //   console.log(data)

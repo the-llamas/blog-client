@@ -1,6 +1,6 @@
 const postTemplate = require('../templates/posts.handlebars')
 const commentTemplate = require('../templates/comments.handlebars')
-const store = require('../store')
+// const store = require('../store')
 
 const createPostSuccess = data => {
   console.log(data)

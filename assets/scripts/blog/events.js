@@ -65,12 +65,20 @@ const onCreatePost = event => {
     .catch(ui.failure)
 }
 const onDeletePost = event => {
-  event.preventDefault()
-  const postID = $(event.target).closest('div').data('id')
-  console.log(postID)
-  api.deletePost(postID)
-    .then()
-    .catch()
+  if (event) {
+    event.preventDefault()
+  }
+  const button = $(event.target)
+  const id = button.data('id')
+  // if (button.attr('class') !== 'btn') {
+  //   // debugger
+  //   button = button.parent()
+  // }
+  // onClearCharacters()
+  api.deletePost(id)
+    .then(ui.deletePostSuccess)
+    .catch(ui.failure)
+    // const postID = $(event.target).closest('div').data('id')
 }
 
 module.exports = {

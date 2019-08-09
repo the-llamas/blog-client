@@ -23,7 +23,13 @@ $(() => {
   $('#create-comment').on('submit', blogEvents.onCreateComment)
   $('#update-comment').on('submit', blogEvents.onUpdateComment)
   $('#posts').on('click', '.delete-post', blogEvents.onDeletePost)
-  $('#posts').on('click', '.edit-post', blogEvents.onEditButton)
-  $('#posts').on('click', '.edit-comment', blogEvents.onEditButton)
+  $('#posts').on('click', '.delete-comment', blogEvents.onDeleteCommment)
+  $('#posts').on('click', '.edit-post', blogEvents.onEditPostButton)
+  $('#posts').on('click', '.edit-comment', blogEvents.onEditCommentButton)
   $('#posts').on('click', '.add-comment-to-post', blogEvents.onAddCommentToPost)
+  blogEvents.onGetPosts()
+})
+
+$(() => {
+  //
 })

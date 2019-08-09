@@ -5,6 +5,7 @@ const successMessage = message => {
   $('#message').text(message)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('form').trigger('reset')
 }
 const failureMessage = message => {
   $('#message').text(message)
@@ -20,18 +21,21 @@ const signUpFailure = responseData => {
   failureMessage('Sign up failed!')
 }
 const signInSuccess = responseData => {
+  $('form').trigger('reset')
   $('#change-password').show()
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
   store.user = responseData.user
   console.log('store.user', store.user)
-  successMessage(store.user.token)
+  successMessage('You signed in successfully!')
+  // successMessage(store.user.token)
 }
 const signInFailure = () => {
   failureMessage('Sign in failed!')
 }
 const signOutSuccess = responseData => {
+  $('form').trigger('reset')
   successMessage('You signed out successfully!')
   $('#change-password').hide()
   $('#sign-out').hide()

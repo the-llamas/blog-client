@@ -43,7 +43,7 @@ const onGetMyPosts = event => {
 //     .catch()
 // }
 
-const onEditButton = event => {
+const onEditPostButton = event => {
   event.preventDefault()
   const button = $(event.target)
   // if (button.attr('class') !== 'btn') {
@@ -66,6 +66,18 @@ const onAddCommentToPost = event => {
   const id = button.data('id')
   const form = $('#create-comment').children()
   form.eq(1).val(id)
+}
+
+const onEditCommentButton = event => {
+  event.preventDefault()
+  const button = $(event.target)
+  // if (button.attr('class') !== 'btn') {
+  //   button = button.parent()
+  // }
+  const id = button.data('id')
+  const form = $('#update-comment').children()
+  form.eq(1).val(id)
+  form.eq(2).val(button.attr('text'))
 }
 
 const onUpdatePost = event => {
@@ -98,7 +110,7 @@ const onCreateComment = event => {
   const formData = getFormFields(form)
   api.createComment(formData)
     .then(ui.createCommentSuccess)
-    // .then(onGetComments)
+    .then(onGetPosts)
     .catch(ui.failure)
 }
 const onCreatePost = event => {
@@ -128,17 +140,37 @@ const onDeletePost = event => {
     // const postID = $(event.target).closest('div').data('id')
 }
 
+const onDeleteCommment = event => {
+  if (event) {
+    event.preventDefault()
+  }
+  const button = $(event.target)
+  const id = button.data('id')
+  // if (button.attr('class') !== 'btn') {
+  //   // debugger
+  //   button = button.parent()
+  // }
+  // onClearCharacters()
+  api.deleteComment(id)
+    .then(ui.deleteCommentSuccess)
+    .then(onGetPosts)
+    .catch(ui.failure)
+    // const postID = $(event.target).closest('div').data('id')
+}
+
 module.exports = {
   onGetPosts,
   onGetMyPosts,
   // onGetComments,
   // onShowPost,
-  onEditButton,
+  onEditPostButton,
   onUpdatePost,
   onUpdateComment,
   onCreateComment,
   onCreatePost,
   onDeletePost,
-  onAddCommentToPost
+  onAddCommentToPost,
+  onDeleteCommment,
+  onEditCommentButton
   // onGetCommentsOfAPost
 }

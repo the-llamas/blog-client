@@ -1,28 +1,46 @@
 const postTemplate = require('../templates/posts.handlebars')
-// const store = require('../store')
+const store = require('../store')
+
+const clearForms = () => {
+  $('form').trigger('reset')
+}
 
 const createPostSuccess = data => {
+  clearForms()
   console.log(data)
 }
 
 const getPostsSuccess = data => {
+  clearForms()
   console.log(data)
   const showPostsHtml = postTemplate({ posts: data.posts })
   $('#posts').html(showPostsHtml)
+  // debugger
+  $('#posts').find('button[user!="' + store.user._id + '"]').hide()
+  $('.add-comment-to-post').show()
 }
 
 const getMyPostsSuccess = data => {
+  clearForms()
   console.log(data)
   const showPostsHtml = postTemplate({ posts: data.posts })
   $('#posts').html(showPostsHtml)
 }
 const updatePostSuccess = data => {
+  clearForms()
   console.log(data)
 }
 
 const createCommentSuccess = data => {
+  clearForms()
   console.log(data)
 }
+
+const deleteCommentSuccess = data => {
+  clearForms()
+  console.log(data)
+}
+
 // const showCommentsHtml = commentTemplate({ comments: data.comments })
 //  $('#comments').html(showCommentsHtml)
 const failure = data => console.log('fail data', data)
@@ -39,6 +57,7 @@ module.exports = {
   createPostSuccess,
   getMyPostsSuccess,
   failure,
-  updatePostSuccess
+  updatePostSuccess,
+  deleteCommentSuccess
   // onGetCommentsOfAPost
 }

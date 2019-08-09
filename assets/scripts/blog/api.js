@@ -65,6 +65,17 @@ const deletePost = id => {
     }
   })
 }
+
+const deleteComment = id => {
+  return $.ajax({
+    url: config.apiUrl + '/comments/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const updatePost = (formData, id) => {
   // debugger
   return $.ajax({
@@ -109,6 +120,7 @@ module.exports = {
   getCommentsOfAPost,
   createPost,
   deletePost,
+  deleteComment,
   updatePost,
   updateComment
 }

@@ -22,12 +22,12 @@ const onGetMyPosts = event => {
     .catch(ui.failure)
 }
 
-const onGetComments = event => {
-  event.preventDefault()
-  api.getComments()
-    .then(ui.getCommentsSuccess)
-    .catch(ui.failure)
-}
+// const onGetComments = event => {
+//   event.preventDefault()
+//   api.getComments()
+//     .then(ui.getCommentsSuccess)
+//     .catch(ui.failure)
+// }
 
 // const onGetCommentsOfAPost = event => {
 //   event.preventDefault()
@@ -57,6 +57,17 @@ const onEditButton = event => {
   form.eq(3).val(post.attr('text'))
 }
 
+const onAddCommentToPost = event => {
+  event.preventDefault()
+  const button = $(event.target)
+  // if (button.attr('class') !== 'btn') {
+  //   button = button.parent()
+  // }
+  const id = button.data('id')
+  const form = $('#create-comment').children()
+  form.eq(1).val(id)
+}
+
 const onUpdatePost = event => {
   if (event) {
     event.preventDefault()
@@ -70,14 +81,25 @@ const onUpdatePost = event => {
     .catch(ui.failure)
 }
 const onUpdateComment = event => {
-  api.updateComment()
-    .then()
-    .catch()
+  if (event) {
+    event.preventDefault()
+  }
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = formData.comment.id
+  api.updateComment(formData, id)
+    .then(ui.updateCommentSuccess)
+    .then(onGetPosts)
+    .catch(ui.failure)
 }
 const onCreateComment = event => {
-  api.createComment()
-    .then()
-    .catch()
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.createComment(formData)
+    .then(ui.createCommentSuccess)
+    // .then(onGetComments)
+    .catch(ui.failure)
 }
 const onCreatePost = event => {
   event.preventDefault()
@@ -109,13 +131,14 @@ const onDeletePost = event => {
 module.exports = {
   onGetPosts,
   onGetMyPosts,
-  onGetComments,
+  // onGetComments,
   // onShowPost,
   onEditButton,
   onUpdatePost,
   onUpdateComment,
   onCreateComment,
   onCreatePost,
-  onDeletePost
+  onDeletePost,
+  onAddCommentToPost
   // onGetCommentsOfAPost
 }

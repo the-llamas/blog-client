@@ -1,5 +1,4 @@
 const postTemplate = require('../templates/posts.handlebars')
-const commentTemplate = require('../templates/comments.handlebars')
 // const store = require('../store')
 
 const createPostSuccess = data => {
@@ -12,12 +11,6 @@ const getPostsSuccess = data => {
   $('#posts').html(showPostsHtml)
 }
 
-const getCommentsSuccess = data => {
-  console.log(data)
-  const showCommentsHtml = commentTemplate({ comments: data.comments })
-  $('#comments').html(showCommentsHtml)
-}
-
 const getMyPostsSuccess = data => {
   console.log(data)
   const showPostsHtml = postTemplate({ posts: data.posts })
@@ -27,6 +20,11 @@ const updatePostSuccess = data => {
   console.log(data)
 }
 
+const createCommentSuccess = data => {
+  console.log(data)
+}
+// const showCommentsHtml = commentTemplate({ comments: data.comments })
+//  $('#comments').html(showCommentsHtml)
 const failure = data => console.log('fail data', data)
 
 // const onGetCommentsOfAPost = data => {
@@ -37,8 +35,8 @@ const failure = data => console.log('fail data', data)
 
 module.exports = {
   getPostsSuccess,
+  createCommentSuccess,
   createPostSuccess,
-  getCommentsSuccess,
   getMyPostsSuccess,
   failure,
   updatePostSuccess

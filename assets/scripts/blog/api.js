@@ -44,6 +44,18 @@ const createPost = formData => {
     }
   })
 }
+
+const createComment = formData => {
+  return $.ajax({
+    url: config.apiUrl + '/comments',
+    method: 'POST',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deletePost = id => {
   return $.ajax({
     url: config.apiUrl + '/posts/' + id,
@@ -57,6 +69,18 @@ const updatePost = (formData, id) => {
   // debugger
   return $.ajax({
     url: config.apiUrl + '/posts/' + id,
+    method: 'PATCH',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateComment = (formData, id) => {
+  // debugger
+  return $.ajax({
+    url: config.apiUrl + '/comments/' + id,
     method: 'PATCH',
     data: formData,
     headers: {
@@ -80,9 +104,11 @@ module.exports = {
   getPosts,
   getComments,
   // showPost
+  createComment,
   getMyPosts,
   getCommentsOfAPost,
   createPost,
   deletePost,
-  updatePost
+  updatePost,
+  updateComment
 }

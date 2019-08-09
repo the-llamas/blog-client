@@ -3,13 +3,27 @@
   <img id="img-{{post._id}}">
   <h3>{{post.title}}</h3>
   <p>{{post.text}}</p>
+
   <div class="btn-div" title="{{post.title}}" text="{{post.text}}" img="{{post.img}}">
     <button class="btn edit-post" data-id="{{post._id}}">EDIT</button>
   </div>
   <div class="btn-div">
     <button class="btn delete-post" data-id="{{post._id}}">DELETE</button>
   </div>
-  <section id="comments" class="comments"></section>
+  <div class="btn-div">
+    <button class="btn add-comment-to-post" data-id="{{post._id}}">ADD COMMENT</button>
+  </div>
+  <section class="comments">
+    {{#each comment as |comm|}}
+    <div class="item" data-id="{{comm.id}}">
+      <p>{{comm.text}}</p>
+      <div class="btn-div" data-id="{{comm.text}}">
+        <button class="btn edit-comment" data-id="{{comm.id}}">Edit</button>
+        <button class="btn delete-comment" data-id="{{comm.id}}">Delete</button>
+      </div>
+    </div>
+    {{/each}}
+  </section>
 </div>
 
 {{/each}}

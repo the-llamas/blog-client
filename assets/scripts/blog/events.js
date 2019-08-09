@@ -85,6 +85,7 @@ const onCreatePost = event => {
   const formData = getFormFields(form)
   api.createPost(formData)
     .then(ui.createPostSuccess)
+    .then(onGetPosts)
     .catch(ui.failure)
 }
 const onDeletePost = event => {

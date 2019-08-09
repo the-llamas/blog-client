@@ -41,6 +41,7 @@ const signOutSuccess = responseData => {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  store.user = ''
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')

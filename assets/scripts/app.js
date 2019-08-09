@@ -7,8 +7,12 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const blogEvents = require('./blog/events')
+const store = require('./store')
 
 $(() => {
+  blogEvents.onGetPosts()
+  // blogEvents.onGetPosts()
+  store.user = ''
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -27,9 +31,11 @@ $(() => {
   $('#posts').on('click', '.edit-post', blogEvents.onEditPostButton)
   $('#posts').on('click', '.edit-comment', blogEvents.onEditCommentButton)
   $('#posts').on('click', '.add-comment-to-post', blogEvents.onAddCommentToPost)
-  blogEvents.onGetPosts()
 })
 
 $(() => {
+  // put this somewhere that will activate the index-posts
+  // after every sign in and sign out action
   //
+  // blogEvents.onGetPosts
 })

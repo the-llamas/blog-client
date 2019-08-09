@@ -1,5 +1,5 @@
 const postTemplate = require('../templates/posts.handlebars')
-const store = require('../store')
+// const store = require('../store')
 
 const clearForms = () => {
   $('form').trigger('reset')
@@ -16,8 +16,6 @@ const getPostsSuccess = data => {
   const showPostsHtml = postTemplate({ posts: data.posts })
   $('#posts').html(showPostsHtml)
   // debugger
-  $('#posts').find('button[user!="' + store.user._id + '"]').hide()
-  $('.add-comment-to-post').show()
 }
 
 const getMyPostsSuccess = data => {

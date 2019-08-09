@@ -1,6 +1,7 @@
 const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
+// const blogEvents = ('../blog/events')
 
 const onSignUp = event => {
   event.preventDefault()

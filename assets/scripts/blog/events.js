@@ -1,7 +1,7 @@
 // handlebars reference
 const api = require('./api')
 const ui = require('./ui')
-// const store = require('../store')
+const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetPosts = event => {
@@ -10,6 +10,16 @@ const onGetPosts = event => {
   }
   api.getPosts()
     .then(ui.getPostsSuccess)
+    .then(() => {
+      $('#posts').find('button[user!="' + store.user._id + '"]').hide()
+      $('.add-comment-to-post').show()
+      if (!store.user) {
+        $('#posts').find('button').hide()
+        $('.add-comment-to-post').hide()
+      } else {
+        $('.add-comment-to-post').show()
+      }
+    })
     .catch(ui.failure)
 }
 
@@ -21,20 +31,6 @@ const onGetMyPosts = event => {
     // .then()
     .catch(ui.failure)
 }
-
-// const onGetComments = event => {
-//   event.preventDefault()
-//   api.getComments()
-//     .then(ui.getCommentsSuccess)
-//     .catch(ui.failure)
-// }
-
-// const onGetCommentsOfAPost = event => {
-//   event.preventDefault()
-//   api.getCommentsOfAPost('event.post.id???????????')
-//     .then(ui.getCommentsOfAPostSuccess)
-//     .catch(ui.failure)
-// }
 
 // const onShowPost = event => {
 //   event.preventDefault()

@@ -26,6 +26,7 @@ const signInSuccess = responseData => {
   $('#sign-up').hide()
   store.user = responseData.user
   console.log('store.user', store.user)
+  successMessage(store.user.token)
 }
 const signInFailure = () => {
   failureMessage('Sign in failed!')

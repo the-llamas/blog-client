@@ -23,6 +23,9 @@ const getMyPostsSuccess = data => {
   const showPostsHtml = postTemplate({ posts: data.posts })
   $('#posts').html(showPostsHtml)
 }
+const updatePostSuccess = data => {
+  console.log(data)
+}
 
 const failure = data => console.log('fail data', data)
 
@@ -37,6 +40,7 @@ module.exports = {
   createPostSuccess,
   getCommentsSuccess,
   getMyPostsSuccess,
-  failure
+  failure,
+  updatePostSuccess
   // onGetCommentsOfAPost
 }

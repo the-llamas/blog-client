@@ -53,6 +53,28 @@ const deletePost = id => {
     }
   })
 }
+const updatePost = (formData, id) => {
+  // debugger
+  return $.ajax({
+    url: config.apiUrl + '/posts/' + id,
+    method: 'PATCH',
+    data: formData,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+// const updateComment = (formData, id) => {
+//   return $.ajax({
+//     url: config.apiUrl + '/posts/' + id,
+//     method: 'PATCH',
+//     data: formData,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   getPosts,
@@ -61,5 +83,6 @@ module.exports = {
   getMyPosts,
   getCommentsOfAPost,
   createPost,
-  deletePost
+  deletePost,
+  updatePost
 }

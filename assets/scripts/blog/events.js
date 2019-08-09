@@ -5,7 +5,9 @@ const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetPosts = event => {
-  event.preventDefault()
+  if (event) {
+    event.preventDefault()
+  }
   api.getPosts()
     .then(ui.getPostsSuccess)
     .catch(ui.failure)
@@ -41,10 +43,31 @@ const onGetComments = event => {
 //     .catch()
 // }
 
+const onEditButton = event => {
+  event.preventDefault()
+  const button = $(event.target)
+  // if (button.attr('class') !== 'btn') {
+  //   button = button.parent()
+  // }
+  const post = button.parent()
+  const id = button.data('id')
+  const form = $('#update-post').children()
+  form.eq(1).val(id)
+  form.eq(2).val(post.attr('title'))
+  form.eq(3).val(post.attr('text'))
+}
+
 const onUpdatePost = event => {
-  api.updatePost()
-    .then()
-    .catch()
+  if (event) {
+    event.preventDefault()
+  }
+  const form = event.target
+  const formData = getFormFields(form)
+  const id = formData.post.id
+  api.updatePost(formData, id)
+    .then(ui.updatePostSuccess)
+    .then(onGetPosts)
+    .catch(ui.failure)
 }
 const onUpdateComment = event => {
   api.updateComment()
@@ -77,6 +100,7 @@ const onDeletePost = event => {
   // onClearCharacters()
   api.deletePost(id)
     .then(ui.deletePostSuccess)
+    .then(onGetPosts)
     .catch(ui.failure)
     // const postID = $(event.target).closest('div').data('id')
 }
@@ -86,6 +110,7 @@ module.exports = {
   onGetMyPosts,
   onGetComments,
   // onShowPost,
+  onEditButton,
   onUpdatePost,
   onUpdateComment,
   onCreateComment,

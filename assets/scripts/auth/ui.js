@@ -1,5 +1,5 @@
 const store = require('../store')
-const events = require('./events')
+// const events = require('./events')
 
 const successMessage = message => {
   $('form').trigger('reset')
@@ -62,6 +62,8 @@ const signOutSuccess = responseData => {
   $('#create-post').hide()
   $('#update-comment').hide()
   $('#posts').show()
+  $('#modalButton').text('Sign In / Sign Up')
+  $('#exampleModalLabel').text('Sign In / Sign Up')
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')

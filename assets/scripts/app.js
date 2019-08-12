@@ -22,7 +22,6 @@ $(() => {
   $('#create-post').hide()
   $('#update-comment').hide()
   $('#change-password').hide()
-  $('#posts').hide()
   $('#create-post').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)

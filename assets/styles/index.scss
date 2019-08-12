@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-
+@import 'box.scss';
 .container {
   display: flex;
   justify-content: space-evenly;
@@ -7,4 +7,14 @@
 
 .hide {
   display: none;
+}
+
+.card-header {
+  font-size: 3.0em;
+}
+span {
+  color: black;
+  font-size: 0.5em;
+  float: right;
+  margin: auto 0;
 }

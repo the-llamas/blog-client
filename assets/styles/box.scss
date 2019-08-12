@@ -1,0 +1,34 @@
+
+.article-block {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  background: #403E4F;
+  padding: 2rem;
+  box-shadow: 0.25rem 0.25rem 1.3rem rgba(0, 0, 0, 0.33);
+}
+
+
+.article-body {
+  color: white;
+}
+
+.article-whole {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.site-title {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+}
+h1 {
+  font-size: 3.0rem;
+  letter-spacing: 0.1rem;
+}

@@ -40,7 +40,6 @@ const signInSuccess = responseData => {
   $('#posts').show()
   $('#create-post').show()
   store.user = responseData.user
-  console.log('store.user', store.user)
   successMessage('You signed in successfully!')
   // successMessage(store.user.token)
 }

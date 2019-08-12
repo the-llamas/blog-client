@@ -7,12 +7,10 @@ const clearForms = () => {
 
 const createPostSuccess = data => {
   clearForms()
-  console.log(data)
 }
 
 const getPostsSuccess = data => {
   clearForms()
-  console.log(data)
   const showPostsHtml = postTemplate({ posts: data.posts })
   $('#posts').html(showPostsHtml)
   // debugger
@@ -20,31 +18,26 @@ const getPostsSuccess = data => {
 
 const getMyPostsSuccess = data => {
   clearForms()
-  console.log(data)
   const showPostsHtml = postTemplate({ posts: data.posts })
   $('#posts').html(showPostsHtml)
 }
 const updatePostSuccess = data => {
   clearForms()
-  console.log(data)
 }
 
 const createCommentSuccess = data => {
   clearForms()
-  console.log(data)
 }
 
 const deleteCommentSuccess = data => {
   clearForms()
-  console.log(data)
 }
 
 // const showCommentsHtml = commentTemplate({ comments: data.comments })
 //  $('#comments').html(showCommentsHtml)
-const failure = data => console.log('fail data', data)
+const failure = data => {}
 
 // const onGetCommentsOfAPost = data => {
-//   console.log(data)
 //   const showCommentsHtml = commentTemplate({ comments: data.comments })
 //   $('#comments').html(showCommentsHtml)
 // }

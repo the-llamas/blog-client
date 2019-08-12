@@ -25,7 +25,6 @@ const onGetPosts = event => {
 
 const onGetMyPosts = event => {
   event.preventDefault()
-  console.log(event)
   api.getMyPosts()
     .then(ui.getMyPostsSuccess)
     // .then()

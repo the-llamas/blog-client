@@ -13,7 +13,7 @@ const onGetPosts = event => {
     .then(() => {
       $('#posts').find('button[user!="' + store.user._id + '"]').hide()
       $('.add-comment-to-post').show()
-      if (!store.user) {
+      if (!store.user || store.user._id === '888') {
         $('#posts').find('button').hide()
         $('.add-comment-to-post').hide()
       } else {

@@ -12,7 +12,8 @@ const store = require('./store')
 $(() => {
   blogEvents.onGetPosts()
   // blogEvents.onGetPosts()
-  store.user = ''
+  store.user = {}
+  store.user._id = '888'
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)

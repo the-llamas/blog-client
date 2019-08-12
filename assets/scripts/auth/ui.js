@@ -49,6 +49,12 @@ const signOutSuccess = responseData => {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#update-post').hide()
+  $('#show-post').hide()
+  $('#create-comment').hide()
+  $('#create-post').hide()
+  $('#update-comment').hide()
+  $('#posts').show()
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')

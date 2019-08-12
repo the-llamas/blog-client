@@ -36,7 +36,6 @@ const signInSuccess = responseData => {
   $('#create-post').show()
   $('.myModal2').show()
   store.user = responseData.user
-  console.log('store.user', store.user)
   successMessage('You signed in successfully!')
   // successMessage(store.user.token)
 }

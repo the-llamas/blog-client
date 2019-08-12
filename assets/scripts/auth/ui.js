@@ -1,4 +1,5 @@
 const store = require('../store')
+const events = require('./events')
 
 const successMessage = message => {
   $('form').trigger('reset')
@@ -16,6 +17,7 @@ const failureMessage = message => {
 }
 const signUpSuccess = responseData => {
   successMessage('You signed up successfully!')
+  $('.myModal').modal('hide')
 }
 const signUpFailure = responseData => {
   failureMessage('Sign up failed!')
@@ -26,6 +28,9 @@ const signInSuccess = responseData => {
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#modalButton').text('Change-Password/Sign-Out')
+  $('#exampleModalLabel').text('Change-Password/Sign-Out')
+  $('.myModal').modal('hide')
   $('#update-post').show()
   $('#show-post').show()
   $('#create-comment').show()
@@ -34,7 +39,6 @@ const signInSuccess = responseData => {
   $('#change-password').show()
   $('#posts').show()
   $('#create-post').show()
-  $('.myModal2').show()
   store.user = responseData.user
   console.log('store.user', store.user)
   successMessage('You signed in successfully!')
@@ -45,6 +49,7 @@ const signInFailure = () => {
 }
 const signOutSuccess = responseData => {
   $('form').trigger('reset')
+  $('.myModal').modal('hide')
   successMessage('You signed out successfully!')
   $('#change-password').hide()
   $('#sign-out').hide()

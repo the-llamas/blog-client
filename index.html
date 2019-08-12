@@ -12,76 +12,81 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <header>
       <h1>Llama Blog</h1>
-
       <div id="message"></div>
-
+    </header>
       <!-- / AUTH / -->
-      <section id="auth">
-        <form id="sign-in" class="btn-pad row">
+      <section id="auth" class="container">
+        <form id="sign-in" class="col-md-6">
           <h4>Sign In</h4>
           <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
           <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
-          <button class="btn">Submit</button>
+          <button class="btn btn-dark btn-block">Submit</button>
         </form>
-
-        <form id="sign-out">
-          <button class="btn">Sign Out</button>
-        </form>
-
-        <form id="sign-up">
+        <form id="sign-up" class="col-md-6">
           <h4>Sign Up</h4>
           <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
           <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
           <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="current-password">
-          <button class="btn">Submit</button>
-        </form>
-
-        <form id="change-password">
-          <h4>Change Password</h4>
-          <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" autocomplete="current-password">
-          <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
-          <button class="btn">Submit</button>
+          <button class="btn btn-dark btn-block">Submit</button>
         </form>
       </section>
+      <section>
+        <form id="index-posts" class>
+          <button class="btn btn-dark">Index Posts</button>
+        </form>
+</section>
+<section>
+  <nav class="container">
+        <form id="change-password">
+          <h4 class="col">Change Password</h4>
+          <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" autocomplete="current-password">
+          <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
+          <button class="btn btn-dark">Submit</button>
 
-      <!-- / POST FORMS / -->
+        <form id="sign-out" class="row">
+          <button class="btn btn-dark">Sign Out</button>
+        </form>
+          </form>
+      </nav>
+      </section>
 
+<!-- / POST FORMS / -->
       <form id="create-post" class="btn-pad row">
-        <h4>Create Post</h4>
+        <h4 class="col">Create Post</h4>
         <input class="form-control" type="text" name="post[title]" placeholder="Title">
         <input class="form-control" type="text" name="post[text]" placeholder="Text">
-        <button class="btn">Submit</button>
+        <button class="btn btn-dark btn-block">Submit</button>
       </form>
-
+<!--
       <form id="show-post">
-        <h4>Show Post</h4>
+        <h4 class="col">Show Post</h4>
         <input class="form-control" type="text" name="post[id]" placeholder="Search by Post Number">
-        <button class="btn">Search</button>
-      </form>
-
-      <form id="update-post" class="btn-pad row">
-        <h4>Update Post</h4>
-        <input class="form-control" type="text" name="post[id]" placeholder="Post ID">
+        <button class="btn btn-dark">Search</button>
+      </form> -->
+      <form id="update-post" class="btn-pad">
+        <h4 class="col">Update Post</h4>
+        <input class="form-control hide" type="text" name="post[id]" placeholder="Post ID">
         <input class="form-control" type="text" name="post[title]" placeholder="Title">
         <input class="form-control" type="text" name="post[text]" placeholder="Text">
-        <button class="btn">Submit</button>
+        <button class="btn btn-dark">Submit</button>
       </form>
 
       <!-- / COMMENT FORMS / -->
 
-      <form id="create-comment" class="btn-pad row">
-        <h4>Create Comment</h4>
-        <input class="form-control" type="text" name="comment[post]" placeholder="OnWhichPost(ID)">
+      <form id="create-comment" class="btn-pad">
+        <h4 class="col">Create Comment</h4>
+        <input class="form-control hide" type="text" name="comment[post]" placeholder="OnWhichPost(ID)">
         <input class="form-control" type="text" name="comment[text]" placeholder="Text">
-        <button class="btn">Submit</button>
+        <button class="btn btn-dark">Submit</button>
       </form>
 
-      <form id="update-comment" class="btn-pad row">
-        <h4>Update Comment</h4>
-        <input class="form-control" type="text" name="comment[id]" placeholder="Comment ID">
+      <form id="update-comment" class="btn-pad">
+        <h4 class="col">Update Comment</h4>
+        <input class="form-control hide" type="text" name="comment[id]" placeholder="Comment ID">
         <input class="form-control" type="text" name="comment[text]" placeholder="Text">
-        <button class="btn">Submit</button>
+        <button class="btn btn-dark">Submit</button>
       </form>
 
       <!-- // -->
@@ -91,11 +96,7 @@
 
       <!-- // -->
 
-      <form id="index-posts" class>
-        <button class="btn">Index Posts</button>
-      </form>
-
       <!-- / FOOTER / -->
-      <footer>#</footer>
+      <footer>footer</footer>
     </body>
 </html>

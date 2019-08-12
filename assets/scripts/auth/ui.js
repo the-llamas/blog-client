@@ -49,6 +49,8 @@ const signOutSuccess = responseData => {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  store.user = {}
+  store.user._id = '888'
   $('#update-post').hide()
   $('#show-post').hide()
   $('#create-comment').hide()

@@ -26,6 +26,14 @@ const signInSuccess = responseData => {
   $('#sign-out').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
+  $('#update-post').show()
+  $('#show-post').show()
+  $('#create-comment').show()
+  $('#create-post').show()
+  $('#update-comment').show()
+  $('#change-password').show()
+  $('#posts').show()
+  $('#create-post').show()
   store.user = responseData.user
   console.log('store.user', store.user)
   successMessage('You signed in successfully!')
@@ -43,6 +51,12 @@ const signOutSuccess = responseData => {
   $('#sign-up').show()
   store.user = {}
   store.user._id = '888'
+  $('#update-post').hide()
+  $('#show-post').hide()
+  $('#create-comment').hide()
+  $('#create-post').hide()
+  $('#update-comment').hide()
+  $('#posts').show()
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')

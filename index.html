@@ -15,6 +15,35 @@
       <header>
       <h1>Llama Blog</h1>
       <div id="message"></div>
+      <!-- Button trigger modal -->
+      <section>
+      <button type="button" class="btn btn-primary myModal2 hide" data-toggle="modal" data-target="#exampleModal">
+        Change Password
+      </button>
+      <!-- Modal -->
+      <div class="myModal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <h4 class="col">Change Password</h4>
+                <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" autocomplete="current-password">
+                <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button class="btn btn-dark">Submit</button> </div>
+            </form>
+          </div>
+            </div>
+          </div>
+        </div>
+    </section>
     </header>
       <!-- / AUTH / -->
       <section id="auth" class="container">
@@ -39,13 +68,13 @@
 </section>
 <section>
   <nav class="container">
-        <form id="change-password">
+        <!-- <form id="change-password">
           <h4 class="col">Change Password</h4>
           <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" autocomplete="current-password">
           <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
           <button class="btn btn-dark">Submit</button>
 
-          </form>
+          </form> -->
           <form id="sign-out" class="col">
             <button class="btn btn-dark">Sign Out</button>
           </form>
@@ -88,14 +117,10 @@
         <input class="form-control" type="text" name="comment[text]" placeholder="Text">
         <button class="btn btn-dark">Submit</button>
       </form>
-
       <!-- // -->
-
       <section id="posts"></section>
       <section id="comments"></section>
-
       <!-- // -->
-
       <!-- / FOOTER / -->
       <footer>footer</footer>
     </body>

@@ -34,6 +34,7 @@ const signInSuccess = responseData => {
   $('#change-password').show()
   $('#posts').show()
   $('#create-post').show()
+  $('.myModal2').show()
   store.user = responseData.user
   console.log('store.user', store.user)
   successMessage('You signed in successfully!')
@@ -61,6 +62,7 @@ const signOutFailure = responseData => {
 }
 const changePasswordSuccess = responseData => {
   successMessage('You changed your password!')
+  $('.myModal').modal('hide')
 }
 const changePasswordFailure = responseData => {
   failureMessage('Password not changed!')

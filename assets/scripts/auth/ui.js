@@ -39,6 +39,7 @@ const signInSuccess = responseData => {
   $('#change-password').show()
   $('#posts').show()
   $('#create-post').show()
+  $('#index-posts').show()
   store.user = responseData.user
   successMessage('You signed in successfully!')
   // successMessage(store.user.token)
@@ -54,6 +55,7 @@ const signOutSuccess = responseData => {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#index-posts').hide()
   store.user = {}
   store.user._id = '888'
   $('#update-post').hide()
@@ -64,6 +66,7 @@ const signOutSuccess = responseData => {
   $('#posts').show()
   $('#modalButton').text('Sign In / Sign Up')
   $('#exampleModalLabel').text('Sign In / Sign Up')
+
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')

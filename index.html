@@ -94,8 +94,8 @@
       <div class="modal-body">
       <form id="create-post" class="btn-pad">
         <!-- <h4 class="col">Create Post</h4> -->
-        <input class="form-control" type="text" name="post[title]" placeholder="Title">
-        <input class="form-control" type="text" name="post[text]" placeholder="Text">
+        <textarea class="form-control" rows="2" cols="50" name="post[title]" placeholder="Title"></textarea>
+        <textarea class="form-control" rows="4" cols="50" name="post[text]" placeholder="Text"></textarea>
         <button class="btn btn-dark">Submit</button>
       </form>
 <!--
@@ -111,6 +111,8 @@
   </div>
 </div>
 </div>
+
+<!-- update post -->
 <div class="updatePostModal modal fade" id="updatePostModal" tabindex="-1" role="dialog" aria-labelledby="updatePostlLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -124,14 +126,16 @@
         <form id="update-post" class="btn-pad">
           <!-- <h4 class="col">Update Post</h4> -->
           <input class="form-control hide" type="text" name="post[id]" placeholder="Post ID">
-          <input class="form-control" type="text" name="post[title]" placeholder="Title">
-          <input class="form-control" type="text" name="post[text]" placeholder="Text">
+          <textarea rows="4" cols="50" class="form-control" name="post[title]" placeholder="Title"></textarea>
+          <textarea rows="4" cols="50" class="form-control" type="text" name="post[text]" placeholder="Text"></textarea>
           <button class="btn btn-dark">Submit</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<!-- create comment -->
 <div class="createCommentModal modal fade" id="createCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -145,13 +149,15 @@
         <form id="create-comment" class="btn-pad">
           <!-- <h4 class="col">Create Comment</h4> -->
           <input class="form-control hide" type="text" name="comment[post]" placeholder="OnWhichPost(ID)">
-          <input class="form-control" type="text" name="comment[text]" placeholder="Text">
+          <textarea rows="4" cols="50" class="form-control" name="comment[text]" placeholder="Text"></textarea>
           <button class="btn btn-dark">Submit</button>
         </form>
 </div>
 </div>
 </div>
 </div>
+
+<!-- Update commen -->
 <div class="updateCommentModal modal fade" id="updateCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -165,7 +171,7 @@
         <form id="update-comment" class="btn-pad">
           <!-- <h4 class="col">Update Comment</h4> -->
           <input class="form-control hide" type="text" name="comment[id]" placeholder="Comment ID">
-          <input class="form-control" type="text" name="comment[text]" placeholder="Text">
+          <textarea rows="4" cols="50"class="form-control" name="comment[text]" placeholder="Text"></textarea>
           <button class="btn btn-dark">Submit</button>
         </form>
       </div>

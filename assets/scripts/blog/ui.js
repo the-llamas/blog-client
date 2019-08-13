@@ -7,6 +7,7 @@ const clearForms = () => {
 
 const createPostSuccess = data => {
   clearForms()
+  $('.myModal').modal('hide')
 }
 
 const getPostsSuccess = data => {
@@ -27,6 +28,7 @@ const updatePostSuccess = data => {
 
 const createCommentSuccess = data => {
   clearForms()
+  $('.createCommentModal').modal('hide')
 }
 
 const deleteCommentSuccess = data => {

@@ -47,9 +47,9 @@ const onEditPostButton = event => {
   const post = button.parent()
   const id = button.data('id')
   const form = $('#update-post').children()
-  form.eq(1).val(id)
-  form.eq(2).val(post.attr('title'))
-  form.eq(3).val(post.attr('text'))
+  form.eq(0).val(id)
+  form.eq(1).val(post.attr('title'))
+  form.eq(2).val(post.attr('text'))
 }
 
 const onAddCommentToPost = event => {
@@ -60,7 +60,7 @@ const onAddCommentToPost = event => {
   // }
   const id = button.data('id')
   const form = $('#create-comment').children()
-  form.eq(1).val(id)
+  form.eq(0).val(id)
 }
 
 const onEditCommentButton = event => {
@@ -71,8 +71,8 @@ const onEditCommentButton = event => {
   // }
   const id = button.data('id')
   const form = $('#update-comment').children()
-  form.eq(1).val(id)
-  form.eq(2).val(button.attr('text'))
+  form.eq(0).val(id)
+  form.eq(1).val(button.attr('text'))
 }
 
 const onUpdatePost = event => {
@@ -103,6 +103,7 @@ const onCreateComment = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+  console.log(formData)
   api.createComment(formData)
     .then(ui.createCommentSuccess)
     .then(onGetPosts)
@@ -112,6 +113,7 @@ const onCreatePost = event => {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
+
   api.createPost(formData)
     .then(ui.createPostSuccess)
     .then(onGetPosts)

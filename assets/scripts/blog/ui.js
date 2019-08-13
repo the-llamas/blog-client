@@ -17,11 +17,12 @@ const getPostsSuccess = data => {
   // debugger
 }
 
-const getMyPostsSuccess = data => {
-  clearForms()
-  const showPostsHtml = postTemplate({ posts: data.posts })
-  $('#posts').html(showPostsHtml)
-}
+// const getMyPostsSuccess = data => {
+//   clearForms()
+//   const showPostsHtml = postTemplate({ posts: data.posts })
+//   $('#posts').html(showPostsHtml)
+// }
+
 const updatePostSuccess = data => {
   clearForms()
   $('.updatePostModal').modal('hide')
@@ -53,7 +54,7 @@ module.exports = {
   getPostsSuccess,
   createCommentSuccess,
   createPostSuccess,
-  getMyPostsSuccess,
+  // getMyPostsSuccess,
   failure,
   updatePostSuccess,
   deleteCommentSuccess,

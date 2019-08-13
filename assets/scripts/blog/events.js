@@ -23,13 +23,13 @@ const onGetPosts = event => {
     .catch(ui.failure)
 }
 
-const onGetMyPosts = event => {
-  event.preventDefault()
-  api.getMyPosts()
-    .then(ui.getMyPostsSuccess)
-    // .then()
-    .catch(ui.failure)
-}
+// const onGetMyPosts = event => {
+//   event.preventDefault()
+//   api.getMyPosts()
+//     .then(ui.getMyPostsSuccess)
+//     // .then()
+//     .catch(ui.failure)
+// }
 
 // const onShowPost = event => {
 //   event.preventDefault()
@@ -87,6 +87,7 @@ const onUpdatePost = event => {
     .then(onGetPosts)
     .catch(ui.failure)
 }
+
 const onUpdateComment = event => {
   if (event) {
     event.preventDefault()
@@ -99,6 +100,7 @@ const onUpdateComment = event => {
     .then(onGetPosts)
     .catch(ui.failure)
 }
+
 const onCreateComment = event => {
   event.preventDefault()
   const form = event.target
@@ -108,6 +110,7 @@ const onCreateComment = event => {
     .then(onGetPosts)
     .catch(ui.failure)
 }
+
 const onCreatePost = event => {
   event.preventDefault()
   const form = event.target
@@ -118,6 +121,7 @@ const onCreatePost = event => {
     .then(onGetPosts)
     .catch(ui.failure)
 }
+
 const onDeletePost = event => {
   if (event) {
     event.preventDefault()
@@ -156,7 +160,7 @@ const onDeleteCommment = event => {
 
 module.exports = {
   onGetPosts,
-  onGetMyPosts,
+  // onGetMyPosts,
   // onGetComments,
   // onShowPost,
   onEditPostButton,

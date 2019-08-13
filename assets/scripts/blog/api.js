@@ -20,14 +20,14 @@ const getComments = () => {
 //   })
 // }
 
-const getMyPosts = () => {
-  return $.ajax({
-    url: config.apiUrl + '/posts-user/' + store.user._id,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
+// const getMyPosts = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/posts-user/' + store.user._id,
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 const getCommentsOfAPost = () => {
   return $.ajax({
@@ -116,7 +116,7 @@ module.exports = {
   getComments,
   // showPost
   createComment,
-  getMyPosts,
+  // getMyPosts,
   getCommentsOfAPost,
   createPost,
   deletePost,

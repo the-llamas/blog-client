@@ -3,7 +3,7 @@
 
   <div class="card-header"> {{post.title}}
 
-    <span>By {{post.owner.email}} </br>
+    <span>by {{post.owner.email}} </br>
       <button class="btn edit-post btn-dark" data-id="{{post._id}}" user="{{post.owner._id}}" type="button" data-toggle="modal" data-target=".updatePostModal">EDIT</button>
 
       <button class="btn btn-outline-danger delete-post btn-dark" data-id="{{post._id}}" user={{post.owner._id}}>DELETE</button>

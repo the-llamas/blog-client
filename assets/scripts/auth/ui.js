@@ -46,7 +46,7 @@ const signInSuccess = responseData => {
   $('#change-password').show()
   $('#posts').show()
   $('#create-post').show()
-  $('#index-posts').show()
+  $('#new-post').show()
   store.user = responseData.user
   successMessage('You signed in successfully!')
   hideMessaging()
@@ -64,7 +64,7 @@ const signOutSuccess = responseData => {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
-  $('#index-posts').hide()
+  $('#new-post').hide()
   store.user = {}
   store.user._id = '888'
   $('#update-post').hide()

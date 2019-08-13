@@ -14,20 +14,20 @@
         <div class="btn-div" data-id="{{comm._id}}">
           <p>{{comm.owner.email}}: {{comm.text}}</p>
           <button class="btn edit-comment btn-dark" data-id="{{comm._id}}" text="{{comm.text}}" user={{comm.owner._id}} type="button" data-toggle="modal" data-target=".updateCommentModal">Edit Comment</button>
-          <button class="btn delete-comment btn-dark" data-id="{{comm._id}}" user={{comm.owner._id}}>Delete COMMENT</button>
+          <button class="btn btn-outline-danger delete-comment btn-dark" data-id="{{comm._id}}" user={{comm.owner._id}}>Delete COMMENT</button>
         </div>
       </div>
       {{/each}}
     </section>
   </div>
   <div class="btn-div">
-    <button class="btn add-comment-to-post" data-id="{{post._id}}" type="button" data-toggle="modal" data-target=".createCommentModal">ADD COMMENT</button>
+    <button class="btn btn-dark add-comment-to-post" data-id="{{post._id}}" type="button" data-toggle="modal" data-target=".createCommentModal">ADD COMMENT</button>
   </div>
   <div class="btn-div" title="{{post.title}}" text="{{post.text}}" img="{{post.img}}">
     <button class="btn edit-post btn-dark" data-id="{{post._id}}" user="{{post.owner._id}}" type="button" data-toggle="modal" data-target=".updatePostModal">EDIT</button>
   </div>
   <div class="btn-div">
-    <button class="btn delete-post btn-dark" data-id="{{post._id}}" user={{post.owner._id}}>DELETE</button>
+    <button class="btn btn-outline-danger delete-post btn-dark" data-id="{{post._id}}" user={{post.owner._id}}>DELETE</button>
   </div>
 </div>
 

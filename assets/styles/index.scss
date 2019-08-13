@@ -1,5 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
-@import 'box.scss';
+@import './box';
 
 .container {
   display: flex;
@@ -37,4 +37,8 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+#new-post {
+  text-align: center;
 }

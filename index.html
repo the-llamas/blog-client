@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Llama Blog</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+      <h1>Llama Blog</h1>
+      <div id="message"></div>
+      <!-- Button trigger modal -->
+    </header>
+      <section>
+      <button id="modalButton" type="button" class="btn btn-dark myModal" data-toggle="modal" data-target="#exampleModal">
+        Sign-Up/Sign-In
+      </button>
+      <!-- Modal -->
+      <div class="myModal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sign-Up/Sign-In</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <h4 class="col">Change Password</h4>
+                <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" autocomplete="current-password">
+                <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" autocomplete="new-password">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button class="btn btn-dark">Submit</button> </div>
+            </form>
+          </div>
+          <section id="auth" class="container">
+            <form id="sign-in" class="col-md-6">
+              <h4>Sign In</h4>
+              <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+              <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+              <button class="btn btn-dark btn-block">Submit</button>
+            </form>
+            <form id="sign-up" class="col-md-6">
+              <h4>Sign Up</h4>
+              <input class="form-control" type="email" name="credentials[email]" placeholder="Email" autocomplete="email">
+              <input class="form-control" type="password" name="credentials[password]" placeholder="Password" autocomplete="current-password">
+              <input class="form-control" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="current-password">
+              <button class="btn btn-dark btn-block">Submit</button>
+            </form>
+            <form id="sign-out" class="col">
+              <button class="btn btn-dark">Sign Out</button>
+            </form>
+          </section>
+            </div>
+          </div>
+        </div>
+    </section>
+  </header>
+
+  <!-- / AUTH / -->
+  <section class="new-post">
+    <form class="new-post" id="new-post" data-target="#postsModal" data-toggle="modal">
+      <button id="modalButton" type="button" class="btn btn-dark postsModal" data-toggle="modal" data-target="#postsModal">Create Post</button>
+    </form>
+  </section>
+  <section>
+    <nav class="container">
+    </nav>
+  </section>
+      </nav>
+      </section>
+
+<!-- / POST FORMS / -->
+<div class="myModal modal fade" id="postsModal" tabindex="-1" role="dialog" aria-labelledby="postsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="postsModalLabel">Create Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form id="create-post" class="btn-pad">
+        <!-- <h4 class="col">Create Post</h4> -->
+        <textarea class="form-control" rows="2" cols="50" name="post[title]" placeholder="Title"></textarea>
+        <textarea class="form-control" rows="4" cols="50" name="post[text]" placeholder="Text"></textarea>
+        <button class="btn btn-dark">Submit</button>
+      </form>
+<!--
+      <form id="show-post">
+        <h4 class="col">Show Post</h4>
+        <input class="form-control" type="text" name="post[id]" placeholder="Search by Post Number">
+        <button class="btn btn-dark">Search</button>
+      </form> -->
+
+      <!-- / COMMENT FORMS / -->
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- update post -->
+<div class="updatePostModal modal fade" id="updatePostModal" tabindex="-1" role="dialog" aria-labelledby="updatePostlLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updatePostModal">Edit Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="update-post" class="btn-pad">
+          <!-- <h4 class="col">Update Post</h4> -->
+          <input class="form-control hide" type="text" name="post[id]" placeholder="Post ID">
+          <textarea rows="4" cols="50" class="form-control" name="post[title]" placeholder="Title"></textarea>
+          <textarea rows="4" cols="50" class="form-control" name="post[text]" placeholder="Text"></textarea>
+          <button class="btn btn-dark">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- create comment -->
+<div class="createCommentModal modal fade" id="createCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Comment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="create-comment" class="btn-pad">
+          <!-- <h4 class="col">Create Comment</h4> -->
+          <input class="form-control hide" type="text" name="comment[post]" placeholder="OnWhichPost(ID)">
+          <textarea rows="4" cols="50" class="form-control" name="comment[text]" placeholder="Text"></textarea>
+          <button class="btn btn-dark">Submit</button>
+        </form>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Update commen -->
+<div class="updateCommentModal modal fade" id="updateCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Comment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="update-comment" class="btn-pad">
+          <!-- <h4 class="col">Update Comment</h4> -->
+          <input class="form-control hide" type="text" name="comment[id]" placeholder="Comment ID">
+          <textarea rows="4" cols="50"class="form-control" name="comment[text]" placeholder="Text"></textarea>
+          <button class="btn btn-dark">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- // -->
+      <section id="posts"></section>
+      <section id="comments"></section>
+      <!-- // -->
+      <!-- / FOOTER / -->
+      <!-- <footer>footer</footer> -->
+    </body>
+</html>

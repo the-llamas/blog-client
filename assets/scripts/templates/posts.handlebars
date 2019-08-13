@@ -1,11 +1,19 @@
 {{#each posts as |post|}}
 <div class="card border-dark mb-3 item" data-id="{{post._id}} style="max-width: 18rem;">
+
   <div class="card-header"> {{post.title}}
-    <span>By {{post.owner.email}}</span>
+
+    <span>By {{post.owner.email}} </br>
+      <button class="btn edit-post btn-dark" data-id="{{post._id}}" user="{{post.owner._id}}" type="button" data-toggle="modal" data-target=".updatePostModal">EDIT</button>
+
+      <button class="btn btn-outline-danger delete-post btn-dark" data-id="{{post._id}}" user={{post.owner._id}}>DELETE</button>
+    </span>
   </div>
+
   <div class="card-body text-dark">
     <h5 class="card-title"></h5>
     <p class="card-text">{{post.text}}</p>
+
   </div>
   <div class="card-footer">
     <section class="comments">
@@ -22,12 +30,6 @@
   </div>
   <div class="btn-div">
     <button class="btn btn-dark add-comment-to-post" data-id="{{post._id}}" type="button" data-toggle="modal" data-target=".createCommentModal">ADD COMMENT</button>
-  </div>
-  <div class="btn-div" title="{{post.title}}" text="{{post.text}}" img="{{post.img}}">
-    <button class="btn edit-post btn-dark" data-id="{{post._id}}" user="{{post.owner._id}}" type="button" data-toggle="modal" data-target=".updatePostModal">EDIT</button>
-  </div>
-  <div class="btn-div">
-    <button class="btn btn-outline-danger delete-post btn-dark" data-id="{{post._id}}" user={{post.owner._id}}>DELETE</button>
   </div>
 </div>
 

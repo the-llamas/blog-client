@@ -94,8 +94,8 @@
       <div class="modal-body">
       <form id="create-post" class="btn-pad">
         <!-- <h4 class="col">Create Post</h4> -->
-        <input class="form-control" type="text" name="post[title]" placeholder="Title">
-        <input class="form-control" type="text" name="post[text]" placeholder="Text">
+        <textarea class="form-control" rows="2" cols="50" name="post[title]" placeholder="Title"></textarea>
+        <textarea class="form-control" rows="4" cols="50" name="post[text]" placeholder="Text"></textarea>
         <button class="btn btn-dark">Submit</button>
       </form>
 <!--
@@ -124,8 +124,8 @@
         <form id="update-post" class="btn-pad">
           <!-- <h4 class="col">Update Post</h4> -->
           <input class="form-control hide" type="text" name="post[id]" placeholder="Post ID">
-          <input class="form-control" type="text" name="post[title]" placeholder="Title">
-          <input class="form-control" type="text" name="post[text]" placeholder="Text">
+          <textarea rows="4" cols="50" class="form-control" name="post[title]" placeholder="Title"></textarea>
+          <textarea rows="4" cols="50" class="form-control" type="text" name="post[text]" placeholder="Text"></textarea>
           <button class="btn btn-dark">Submit</button>
         </form>
       </div>
@@ -145,7 +145,7 @@
         <form id="create-comment" class="btn-pad">
           <!-- <h4 class="col">Create Comment</h4> -->
           <input class="form-control hide" type="text" name="comment[post]" placeholder="OnWhichPost(ID)">
-          <input class="form-control" type="text" name="comment[text]" placeholder="Text">
+          <textarea rows="4" cols="50" class="form-control" name="comment[text]" placeholder="Text"></textarea>
           <button class="btn btn-dark">Submit</button>
         </form>
 </div>
@@ -165,7 +165,7 @@
         <form id="update-comment" class="btn-pad">
           <!-- <h4 class="col">Update Comment</h4> -->
           <input class="form-control hide" type="text" name="comment[id]" placeholder="Comment ID">
-          <input class="form-control" type="text" name="comment[text]" placeholder="Text">
+          <textarea rows="4" cols="50"class="form-control" name="comment[text]" placeholder="Text"></textarea>
           <button class="btn btn-dark">Submit</button>
         </form>
       </div>

@@ -66,7 +66,6 @@ const signOutSuccess = responseData => {
   $('#posts').show()
   $('#modalButton').text('Sign In / Sign Up')
   $('#exampleModalLabel').text('Sign In / Sign Up')
-
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')

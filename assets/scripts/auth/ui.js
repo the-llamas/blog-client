@@ -15,12 +15,19 @@ const failureMessage = message => {
   // Clear getFormFields
   $('form').trigger('reset')
 }
+const hideMessaging = function () {
+  setTimeout(function () {
+    $('#message').html('')
+  }, 5000)
+}
 const signUpSuccess = responseData => {
   successMessage('You signed up successfully!')
   $('.myModal').modal('hide')
+  hideMessaging()
 }
 const signUpFailure = responseData => {
   failureMessage('Sign up failed!')
+  hideMessaging()
 }
 const signInSuccess = responseData => {
   $('form').trigger('reset')
@@ -42,10 +49,12 @@ const signInSuccess = responseData => {
   $('#index-posts').show()
   store.user = responseData.user
   successMessage('You signed in successfully!')
+  hideMessaging()
   // successMessage(store.user.token)
 }
 const signInFailure = () => {
   failureMessage('Sign in failed!')
+  hideMessaging()
 }
 const signOutSuccess = responseData => {
   $('form').trigger('reset')
@@ -66,16 +75,20 @@ const signOutSuccess = responseData => {
   $('#posts').show()
   $('#modalButton').text('Sign In / Sign Up')
   $('#exampleModalLabel').text('Sign In / Sign Up')
+  hideMessaging()
 }
 const signOutFailure = responseData => {
   failureMessage('Sign out failed!')
+  hideMessaging()
 }
 const changePasswordSuccess = responseData => {
   successMessage('You changed your password!')
   $('.myModal').modal('hide')
+  hideMessaging()
 }
 const changePasswordFailure = responseData => {
   failureMessage('Password not changed!')
+  hideMessaging()
 }
 module.exports = {
   signUpSuccess,

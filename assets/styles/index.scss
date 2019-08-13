@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import 'box.scss';
+
 .container {
   display: flex;
   justify-content: space-evenly;
@@ -12,9 +13,24 @@
 .card-header {
   font-size: 3.0em;
 }
+
 span {
   color: black;
   font-size: 0.5em;
   float: right;
   margin: auto 0;
+}
+
+header {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('public/llama.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }

@@ -16,6 +16,7 @@ const onSignUp = event => {
         .catch(ui.signInFailure)
     })
     .catch(ui.signUpFailure)
+
 }
 const onSignIn = event => {
   event.preventDefault()

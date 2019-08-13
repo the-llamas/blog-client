@@ -24,8 +24,13 @@ const getMyPostsSuccess = data => {
 }
 const updatePostSuccess = data => {
   clearForms()
+  $('.updatePostModal').modal('hide')
 }
 
+const updateCommentSuccess = data => {
+  clearForms()
+  $('.updateCommentModal').modal('hide')
+}
 const createCommentSuccess = data => {
   clearForms()
   $('.createCommentModal').modal('hide')
@@ -51,6 +56,7 @@ module.exports = {
   getMyPostsSuccess,
   failure,
   updatePostSuccess,
-  deleteCommentSuccess
+  deleteCommentSuccess,
+  updateCommentSuccess
   // onGetCommentsOfAPost
 }
